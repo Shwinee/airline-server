@@ -14,7 +14,8 @@ var socket = require('socket.io');
 const io = require("socket.io")(server, {
     cors: {
       origin: "https://shwinee.github.io/airline/",
-      methods: ["GET", "POST"]
+      methods: ["GET", "POST"],
+      credentials: true
     }
 });
 io.sockets.on('connection', newConnection);
