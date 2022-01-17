@@ -13,7 +13,6 @@ var socket = require('socket.io');
 
 const io = require("socket.io")(server, {
     cors: {
-      origin: "https://shwinee.github.io/airline/",
       methods: ["GET", "POST"],
       credentials: true
     }
@@ -26,6 +25,7 @@ function newConnection(socket) {
   socket.on('sendPos', playerPos);
 
   function playerPos(data){
+    console.log(data);
     socket.broadcast.emit('getPos', data);
   }
 }
